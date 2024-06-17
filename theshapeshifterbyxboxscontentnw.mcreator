@@ -1,0 +1,219 @@
+{
+  "mod_elements": [
+    {
+      "name": "ShapeshifterKiller",
+      "type": "animatedentity",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shapeshifter_killer",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/ShapeshifterKillerEntity.java",
+          "src/main/resources/assets/theshapeshifterbyxboxscontentnw/models/item/shapeshifter_killer_spawn_egg.json",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/client/renderer/ShapeshifterKillerRenderer.java",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/model/ShapeshifterKillerModel.java"
+        ]
+      }
+    },
+    {
+      "name": "ShapeshifterOnWall",
+      "type": "animatedentity",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shapeshifter_on_wall",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/theshapeshifterbyxboxscontentnw/models/item/shapeshifter_on_wall_spawn_egg.json",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/model/ShapeshifterOnWallModel.java",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/ShapeshifterOnWallEntity.java",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/client/renderer/ShapeshifterOnWallRenderer.java",
+          "src/main/resources/data/theshapeshifterbyxboxscontentnw/forge/biome_modifier/shapeshifter_on_wall_biome_modifier.json"
+        ]
+      }
+    },
+    {
+      "name": "Emerge",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "emerge",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/procedures/EmergeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "InvisUntilTouched",
+      "type": "procedure",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "invis_until_touched",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/procedures/InvisUntilTouchedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DespawnOtherKillers",
+      "type": "procedure",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "despawn_other_killers",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/procedures/DespawnOtherKillersProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ShapeshifterFake",
+      "type": "animatedentity",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shapeshifter_fake",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/model/ShapeshifterFakeModel.java",
+          "src/main/resources/assets/theshapeshifterbyxboxscontentnw/models/item/shapeshifter_fake_spawn_egg.json",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/client/renderer/ShapeshifterFakeRenderer.java",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/ShapeshifterFakeEntity.java",
+          "src/main/resources/data/theshapeshifterbyxboxscontentnw/forge/biome_modifier/shapeshifter_fake_biome_modifier.json"
+        ]
+      }
+    },
+    {
+      "name": "Emergish",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "emergish",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/procedures/EmergishProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "entity.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall": "Shapeshifter On Wall",
+      "entity.theshapeshifterbyxboxscontentnw.shapeshifter_killer": "Shapeshifter",
+      "item.theshapeshifterbyxboxscontentnw.shapeshifter_killer_spawn_egg": "Shapeshifter Spawn Egg",
+      "item.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall_spawn_egg": "Shapeshifter On Wall Spawn Egg",
+      "entity.theshapeshifterbyxboxscontentnw.shapeshifter_fake": "Shapeshifter On Wall Fake PX",
+      "item.theshapeshifterbyxboxscontentnw.shapeshifter_fake_spawn_egg": "Shapeshifter On Wall Fake PX Spawn Egg"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "theshapeshifterbyxboxscontentnw",
+    "modName": "TheShapeShifter(ByXbox\u0027sContentNW)",
+    "version": "1.0.0",
+    "author": "PC, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [
+      "geckolib"
+    ],
+    "currentGenerator": "forge-1.19.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.theshapeshifterbyxboxscontentnw",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202300452316
+}
