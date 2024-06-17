@@ -100,9 +100,6 @@
     "stepSound": {
       "value": ""
     },
-    "onMobTickUpdate": {
-      "name": "LookAtPlayer"
-    },
     "onPlayerCollidesWith": {
       "name": "Emerge"
     },

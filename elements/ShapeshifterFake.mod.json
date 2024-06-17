@@ -100,9 +100,6 @@
     "stepSound": {
       "value": ""
     },
-    "onMobTickUpdate": {
-      "name": "LookAtPlayer"
-    },
     "onInitialSpawn": {
       "name": "Emergish"
     },
