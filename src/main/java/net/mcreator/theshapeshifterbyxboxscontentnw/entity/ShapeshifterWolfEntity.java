@@ -46,6 +46,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.TurnIntoSSFleeProcedure;
 import net.mcreator.theshapeshifterbyxboxscontentnw.init.TheshapeshifterbyxboxscontentnwModEntities;
 
 public class ShapeshifterWolfEntity extends PathfinderMob implements IAnimatable {
@@ -128,6 +129,12 @@ public class ShapeshifterWolfEntity extends PathfinderMob implements IAnimatable
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.wolf.death"));
+	}
+
+	@Override
+	public boolean hurt(DamageSource source, float amount) {
+		TurnIntoSSFleeProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
+		return super.hurt(source, amount);
 	}
 
 	@Override

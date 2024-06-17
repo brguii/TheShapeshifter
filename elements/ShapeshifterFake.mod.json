@@ -2,7 +2,7 @@
   "_fv": 57,
   "_type": "animatedentity",
   "definition": {
-    "mobName": "Shapeshifter On Wall Fake PX",
+    "mobName": "Shapeshifter On Wall Fake",
     "mobLabel": "",
     "mobModelTexture": "shapeshifter.png",
     "mobModelGlowTexture": "",
@@ -99,6 +99,9 @@
     },
     "stepSound": {
       "value": ""
+    },
+    "onMobTickUpdate": {
+      "name": "LookAtPlayer"
     },
     "onInitialSpawn": {
       "name": "Emergish"

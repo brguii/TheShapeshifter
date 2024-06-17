@@ -48,6 +48,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
+import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.LookAtPlayerProcedure;
 import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.InvisUntilTouchedProcedure;
 import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.EmergeProcedure;
 import net.mcreator.theshapeshifterbyxboxscontentnw.init.TheshapeshifterbyxboxscontentnwModEntities;
@@ -149,6 +150,7 @@ public class ShapeshifterOnWallEntity extends Monster implements IAnimatable {
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		LookAtPlayerProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 
