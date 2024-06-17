@@ -29,6 +29,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.theshapeshifterbyxboxscontentnw.init.TheshapeshifterbyxboxscontentnwModSounds;
 import net.mcreator.theshapeshifterbyxboxscontentnw.init.TheshapeshifterbyxboxscontentnwModItems;
 import net.mcreator.theshapeshifterbyxboxscontentnw.init.TheshapeshifterbyxboxscontentnwModEntities;
 
@@ -50,6 +51,7 @@ public class TheshapeshifterbyxboxscontentnwMod {
 		MinecraftForge.EVENT_BUS.register(this);
 
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		TheshapeshifterbyxboxscontentnwModSounds.REGISTRY.register(bus);
 
 		TheshapeshifterbyxboxscontentnwModItems.REGISTRY.register(bus);
 		TheshapeshifterbyxboxscontentnwModEntities.REGISTRY.register(bus);

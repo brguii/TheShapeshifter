@@ -318,17 +318,45 @@
     }
   ],
   "variable_elements": [],
-  "sound_elements": [],
+  "sound_elements": [
+    {
+      "name": "knocking",
+      "files": [
+        "knocking"
+      ],
+      "category": "hostile",
+      "subtitle": "Knocking"
+    },
+    {
+      "name": "sound",
+      "files": [
+        "soung"
+      ],
+      "category": "ambient",
+      "subtitle": ""
+    },
+    {
+      "name": "sound2",
+      "files": [
+        "sound2"
+      ],
+      "category": "ambient",
+      "subtitle": ""
+    }
+  ],
   "language_map": {
     "en_us": {
+      "item.theshapeshifterbyxboxscontentnw.shapeshifter_flee_spawn_egg": "Shapeshifter Spawn Egg",
+      "entity.theshapeshifterbyxboxscontentnw.shapeshifter_fake": "Shapeshifter On Wall Fake",
+      "subtitles.sound": "",
       "entity.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall": "Shapeshifter On Wall",
       "item.theshapeshifterbyxboxscontentnw.shapeshifter_wolf_spawn_egg": "Shapeshifter Wolf Spawn Egg",
       "entity.theshapeshifterbyxboxscontentnw.shapeshifter_killer": "Shapeshifter",
       "entity.theshapeshifterbyxboxscontentnw.shapeshifter_wolf": "Shapeshifter Wolf",
+      "subtitles.knocking": "Knocking",
       "item.theshapeshifterbyxboxscontentnw.shapeshifter_killer_spawn_egg": "Shapeshifter Spawn Egg",
+      "subtitles.sound2": "",
       "item.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall_spawn_egg": "Shapeshifter On Wall Spawn Egg",
-      "item.theshapeshifterbyxboxscontentnw.shapeshifter_flee_spawn_egg": "Shapeshifter Spawn Egg",
-      "entity.theshapeshifterbyxboxscontentnw.shapeshifter_fake": "Shapeshifter On Wall Fake",
       "item.theshapeshifterbyxboxscontentnw.shapeshifter_fake_spawn_egg": "Shapeshifter On Wall Fake Spawn Egg",
       "entity.theshapeshifterbyxboxscontentnw.shapeshifter_flee": "Shapeshifter"
     }

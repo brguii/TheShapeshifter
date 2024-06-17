@@ -1,0 +1,27 @@
+{
+  "knocking": {
+    "subtitle": "subtitles.knocking",
+    "sounds": [
+      {
+        "name": "theshapeshifterbyxboxscontentnw:knocking",
+        "stream": false
+      }
+    ]
+  },
+  "sound": {
+    "sounds": [
+      {
+        "name": "theshapeshifterbyxboxscontentnw:soung",
+        "stream": false
+      }
+    ]
+  },
+  "sound2": {
+    "sounds": [
+      {
+        "name": "theshapeshifterbyxboxscontentnw:sound2",
+        "stream": false
+      }
+    ]
+  }
+}
