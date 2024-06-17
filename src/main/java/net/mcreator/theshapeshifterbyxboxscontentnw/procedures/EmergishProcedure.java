@@ -18,10 +18,6 @@ public class EmergishProcedure {
 			if (!entity.level.isClientSide())
 				entity.discard();
 		});
-		if (world.getBlockState(new BlockPos(x + 1, y, z)).canOcclude() == false) {
-			if (!entity.level.isClientSide())
-				entity.discard();
-		}
 		if (world.getBlockState(new BlockPos(x, y, z)).canOcclude() == true) {
 			if (!entity.level.isClientSide())
 				entity.discard();

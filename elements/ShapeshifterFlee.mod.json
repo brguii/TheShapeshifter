@@ -100,6 +100,9 @@
     "stepSound": {
       "value": ""
     },
+    "onMobTickUpdate": {
+      "name": "DespawnSomewhatRandom"
+    },
     "onInitialSpawn": {
       "name": "DespawnSomewhatRandom"
     },

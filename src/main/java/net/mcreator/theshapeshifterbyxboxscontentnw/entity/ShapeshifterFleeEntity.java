@@ -155,6 +155,7 @@ public class ShapeshifterFleeEntity extends Monster implements IAnimatable {
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		DespawnSomewhatRandomProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 
