@@ -1,8 +1,12 @@
 {
   "entity.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall": "Shapeshifter On Wall",
+  "item.theshapeshifterbyxboxscontentnw.shapeshifter_wolf_spawn_egg": "Shapeshifter Wolf Spawn Egg",
   "entity.theshapeshifterbyxboxscontentnw.shapeshifter_killer": "Shapeshifter",
+  "entity.theshapeshifterbyxboxscontentnw.shapeshifter_wolf": "Shapeshifter Wolf",
   "item.theshapeshifterbyxboxscontentnw.shapeshifter_killer_spawn_egg": "Shapeshifter Spawn Egg",
   "item.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall_spawn_egg": "Shapeshifter On Wall Spawn Egg",
+  "item.theshapeshifterbyxboxscontentnw.shapeshifter_flee_spawn_egg": "Shapeshifter Spawn Egg",
   "entity.theshapeshifterbyxboxscontentnw.shapeshifter_fake": "Shapeshifter On Wall Fake PX",
-  "item.theshapeshifterbyxboxscontentnw.shapeshifter_fake_spawn_egg": "Shapeshifter On Wall Fake PX Spawn Egg"
+  "item.theshapeshifterbyxboxscontentnw.shapeshifter_fake_spawn_egg": "Shapeshifter On Wall Fake PX Spawn Egg",
+  "entity.theshapeshifterbyxboxscontentnw.shapeshifter_flee": "Shapeshifter"
 }

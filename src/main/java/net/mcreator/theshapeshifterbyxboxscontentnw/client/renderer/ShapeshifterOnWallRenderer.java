@@ -17,12 +17,12 @@ import com.mojang.blaze3d.vertex.PoseStack;
 public class ShapeshifterOnWallRenderer extends GeoEntityRenderer<ShapeshifterOnWallEntity> {
 	public ShapeshifterOnWallRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new ShapeshifterOnWallModel());
-		this.shadowRadius = 0.5f;
+		this.shadowRadius = 0f;
 	}
 
 	@Override
 	public RenderType getRenderType(ShapeshifterOnWallEntity entity, float partialTicks, PoseStack stack, MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn, ResourceLocation textureLocation) {
-		stack.scale(0.8f, 0.8f, 0.8f);
+		stack.scale(0.45f, 0.45f, 0.45f);
 		return RenderType.entityTranslucent(getTextureLocation(entity));
 	}
 }

@@ -47,26 +47,26 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
-import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.DespawnOtherKillersProcedure;
+import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.DespawnSomewhatRandomProcedure;
 import net.mcreator.theshapeshifterbyxboxscontentnw.init.TheshapeshifterbyxboxscontentnwModEntities;
 
 import javax.annotation.Nullable;
 
-public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
-	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(ShapeshifterKillerEntity.class, EntityDataSerializers.BOOLEAN);
-	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(ShapeshifterKillerEntity.class, EntityDataSerializers.STRING);
-	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(ShapeshifterKillerEntity.class, EntityDataSerializers.STRING);
+public class ShapeshifterFleeEntity extends Monster implements IAnimatable {
+	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(ShapeshifterFleeEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(ShapeshifterFleeEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(ShapeshifterFleeEntity.class, EntityDataSerializers.STRING);
 	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	private boolean swinging;
 	private boolean lastloop;
 	private long lastSwing;
 	public String animationprocedure = "empty";
 
-	public ShapeshifterKillerEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_KILLER.get(), world);
+	public ShapeshifterFleeEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_FLEE.get(), world);
 	}
 
-	public ShapeshifterKillerEntity(EntityType<ShapeshifterKillerEntity> type, Level world) {
+	public ShapeshifterFleeEntity(EntityType<ShapeshifterFleeEntity> type, Level world) {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
@@ -135,7 +135,7 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		DespawnOtherKillersProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		DespawnSomewhatRandomProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
 		return retval;
 	}
 
@@ -209,7 +209,7 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 	protected void tickDeath() {
 		++this.deathTime;
 		if (this.deathTime == 20) {
-			this.remove(ShapeshifterKillerEntity.RemovalReason.KILLED);
+			this.remove(ShapeshifterFleeEntity.RemovalReason.KILLED);
 			this.dropExperience();
 		}
 	}

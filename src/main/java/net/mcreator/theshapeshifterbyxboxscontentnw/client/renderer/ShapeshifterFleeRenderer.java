@@ -8,20 +8,20 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
-import net.mcreator.theshapeshifterbyxboxscontentnw.entity.model.ShapeshifterFakeModel;
-import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFakeEntity;
+import net.mcreator.theshapeshifterbyxboxscontentnw.entity.model.ShapeshifterFleeModel;
+import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFleeEntity;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class ShapeshifterFakeRenderer extends GeoEntityRenderer<ShapeshifterFakeEntity> {
-	public ShapeshifterFakeRenderer(EntityRendererProvider.Context renderManager) {
-		super(renderManager, new ShapeshifterFakeModel());
+public class ShapeshifterFleeRenderer extends GeoEntityRenderer<ShapeshifterFleeEntity> {
+	public ShapeshifterFleeRenderer(EntityRendererProvider.Context renderManager) {
+		super(renderManager, new ShapeshifterFleeModel());
 		this.shadowRadius = 0f;
 	}
 
 	@Override
-	public RenderType getRenderType(ShapeshifterFakeEntity entity, float partialTicks, PoseStack stack, MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn, ResourceLocation textureLocation) {
+	public RenderType getRenderType(ShapeshifterFleeEntity entity, float partialTicks, PoseStack stack, MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn, ResourceLocation textureLocation) {
 		stack.scale(0.45f, 0.45f, 0.45f);
 		return RenderType.entityTranslucent(getTextureLocation(entity));
 	}

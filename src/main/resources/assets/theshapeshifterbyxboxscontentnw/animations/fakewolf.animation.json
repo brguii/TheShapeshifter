@@ -1,0 +1,161 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"wolf.idle": {
+			"animation_length": 4,
+			"bones": {
+				"lowerbody": {
+					"rotation": {
+						"vector": [12.5, 0, 0]
+					}
+				},
+				"rightleg": {
+					"rotation": {
+						"vector": [-30, 0, 0]
+					}
+				},
+				"lowerrightleg": {
+					"rotation": {
+						"vector": [15, 0, 0]
+					}
+				},
+				"upperbody": {
+					"rotation": {
+						"vector": [22.5, 0, 0]
+					}
+				},
+				"rightarm": {
+					"rotation": {
+						"vector": [-25, -12, 25]
+					}
+				},
+				"lowerrightarm": {
+					"rotation": {
+						"vector": [-40, -10, -20]
+					}
+				},
+				"leftarm": {
+					"rotation": {
+						"vector": [-20, 12, -25]
+					}
+				},
+				"lowerleftarm": {
+					"rotation": {
+						"vector": [-40, 10, 20]
+					}
+				},
+				"leftleg": {
+					"rotation": {
+						"vector": [-2.5, 0, -5]
+					}
+				},
+				"lowerleftleg2": {
+					"rotation": {
+						"vector": [17.5, 0, 0]
+					}
+				},
+				"neck": {
+					"rotation": {
+						"vector": ["query.rotation_to_camera(0)", "query.rotation_to_camera(1) - query.body_y_rotation", 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 90) * 0.25", 0, 0]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"vector": [15, 0, 0]
+					}
+				}
+			}
+		},
+		"wolf.move": {
+			"animation_length": 4,
+			"bones": {
+				"lowerbody": {
+					"rotation": {
+						"vector": [12.5, 0, 0]
+					}
+				},
+				"rightleg": {
+					"rotation": {
+						"vector": [-30, 0, 0]
+					}
+				},
+				"lowerrightleg": {
+					"rotation": {
+						"vector": [15, 0, 0]
+					}
+				},
+				"upperbody": {
+					"rotation": {
+						"vector": [22.5, 0, 0]
+					}
+				},
+				"rightarm": {
+					"rotation": {
+						"vector": [-25, -12, 25]
+					}
+				},
+				"lowerrightarm": {
+					"rotation": {
+						"vector": [-40, -10, -20]
+					}
+				},
+				"leftarm": {
+					"rotation": {
+						"vector": [-20, 12, -25]
+					}
+				},
+				"lowerleftarm": {
+					"rotation": {
+						"vector": [-40, 10, 20]
+					}
+				},
+				"leftleg": {
+					"rotation": {
+						"vector": [-2.5, 0, -5]
+					}
+				},
+				"lowerleftleg2": {
+					"rotation": {
+						"vector": [17.5, 0, 0]
+					}
+				},
+				"neck": {
+					"rotation": {
+						"vector": ["query.rotation_to_camera(0)", "query.rotation_to_camera(1) - query.body_y_rotation", 0]
+					}
+				},
+				"tail": {
+					"rotation": {
+						"vector": ["15+math.sin(query.anim_time * 180) * -5", 0, 0]
+					}
+				},
+				"leg1": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180) * 15", 0, 0]
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180) * -15", 0, 0]
+					}
+				},
+				"leg3": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180) * -15", 0, 0]
+					}
+				},
+				"leg4": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time * 180) * 15", 0, 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

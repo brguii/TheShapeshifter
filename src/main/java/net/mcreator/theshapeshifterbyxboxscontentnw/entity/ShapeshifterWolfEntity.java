@@ -15,30 +15,28 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
-import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.OpenDoorGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnGroupData;
+import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -46,27 +44,25 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.BlockPos;
 
-import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.DespawnOtherKillersProcedure;
 import net.mcreator.theshapeshifterbyxboxscontentnw.init.TheshapeshifterbyxboxscontentnwModEntities;
 
-import javax.annotation.Nullable;
-
-public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
-	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(ShapeshifterKillerEntity.class, EntityDataSerializers.BOOLEAN);
-	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(ShapeshifterKillerEntity.class, EntityDataSerializers.STRING);
-	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(ShapeshifterKillerEntity.class, EntityDataSerializers.STRING);
+public class ShapeshifterWolfEntity extends PathfinderMob implements IAnimatable {
+	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(ShapeshifterWolfEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(ShapeshifterWolfEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(ShapeshifterWolfEntity.class, EntityDataSerializers.STRING);
 	private AnimationFactory factory = GeckoLibUtil.createFactory(this);
 	private boolean swinging;
 	private boolean lastloop;
 	private long lastSwing;
 	public String animationprocedure = "empty";
 
-	public ShapeshifterKillerEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_KILLER.get(), world);
+	public ShapeshifterWolfEntity(PlayMessages.SpawnEntity packet, Level world) {
+		this(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_WOLF.get(), world);
 	}
 
-	public ShapeshifterKillerEntity(EntityType<ShapeshifterKillerEntity> type, Level world) {
+	public ShapeshifterWolfEntity(EntityType<ShapeshifterWolfEntity> type, Level world) {
 		super(type, world);
 		xpReward = 0;
 		setNoAi(false);
@@ -77,7 +73,7 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "shapeshifter");
+		this.entityData.define(TEXTURE, "wolf");
 	}
 
 	public void setTexture(String texture) {
@@ -96,25 +92,17 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, true) {
+		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
-		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, true) {
-			@Override
-			protected double getAttackReachSqr(LivingEntity entity) {
-				return 4;
-			}
-		});
-		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 0.5));
-		this.targetSelector.addGoal(4, new HurtByTargetGoal(this));
-		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, Player.class, false, false));
-		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(7, new FloatGoal(this));
-		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, (float) 128));
-		this.goalSelector.addGoal(9, new OpenDoorGoal(this, true));
+		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
+		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(5, new FloatGoal(this));
+		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, (float) 128));
 	}
 
 	@Override
@@ -123,20 +111,23 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 	}
 
 	@Override
+	public SoundEvent getAmbientSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.wolf.ambient"));
+	}
+
+	@Override
+	public void playStepSound(BlockPos pos, BlockState blockIn) {
+		this.playSound(ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.wolf.step")), 0.15f, 1);
+	}
+
+	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.wolf.hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
-	}
-
-	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
-		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		DespawnOtherKillersProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
-		return retval;
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.wolf.death"));
 	}
 
 	@Override
@@ -163,15 +154,23 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 		return super.getDimensions(p_33597_).scale((float) 1);
 	}
 
+	@Override
+	public void aiStep() {
+		super.aiStep();
+		this.updateSwingTime();
+	}
+
 	public static void init() {
+		SpawnPlacements.register(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_WOLF.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+				(entityType, world, reason, pos, random) -> (world.getBlockState(pos.below()).getMaterial() == Material.GRASS && world.getRawBrightness(pos, 0) > 8));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.35);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
 		builder = builder.add(Attributes.MAX_HEALTH, 70);
 		builder = builder.add(Attributes.ARMOR, 6);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 6);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		return builder;
 	}
@@ -180,15 +179,11 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 		if (this.animationprocedure.equals("empty")) {
 			if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))
 
-					&& !this.isAggressive()) {
-				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.lurkmove", EDefaultLoopTypes.LOOP));
+			) {
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("wolf.move", EDefaultLoopTypes.LOOP));
 				return PlayState.CONTINUE;
 			}
-			if (this.isAggressive() && event.isMoving()) {
-				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.flee", EDefaultLoopTypes.LOOP));
-				return PlayState.CONTINUE;
-			}
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.idle", EDefaultLoopTypes.LOOP));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("wolf.idle", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		return PlayState.STOP;
@@ -209,7 +204,7 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 	protected void tickDeath() {
 		++this.deathTime;
 		if (this.deathTime == 20) {
-			this.remove(ShapeshifterKillerEntity.RemovalReason.KILLED);
+			this.remove(ShapeshifterWolfEntity.RemovalReason.KILLED);
 			this.dropExperience();
 		}
 	}
@@ -224,8 +219,8 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 
 	@Override
 	public void registerControllers(AnimationData data) {
-		data.addAnimationController(new AnimationController<>(this, "movement", 1, this::movementPredicate));
-		data.addAnimationController(new AnimationController<>(this, "procedure", 1, this::procedurePredicate));
+		data.addAnimationController(new AnimationController<>(this, "movement", 4, this::movementPredicate));
+		data.addAnimationController(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
 	}
 
 	@Override

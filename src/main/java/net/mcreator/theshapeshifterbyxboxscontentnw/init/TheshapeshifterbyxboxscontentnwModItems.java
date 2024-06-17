@@ -22,4 +22,8 @@ public class TheshapeshifterbyxboxscontentnwModItems {
 			() -> new ForgeSpawnEggItem(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_KILLER, -6710887, -3355444, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 	public static final RegistryObject<Item> SHAPESHIFTER_FAKE_SPAWN_EGG = REGISTRY.register("shapeshifter_fake_spawn_egg",
 			() -> new ForgeSpawnEggItem(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_FAKE, -1, -1, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> SHAPESHIFTER_WOLF_SPAWN_EGG = REGISTRY.register("shapeshifter_wolf_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_WOLF, -10066330, -6710887, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+	public static final RegistryObject<Item> SHAPESHIFTER_FLEE_SPAWN_EGG = REGISTRY.register("shapeshifter_flee_spawn_egg",
+			() -> new ForgeSpawnEggItem(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_FLEE, -6710887, -3355444, new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 }

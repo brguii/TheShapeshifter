@@ -2,7 +2,7 @@
   "_fv": 57,
   "_type": "animatedentity",
   "definition": {
-    "mobName": "Shapeshifter On Wall",
+    "mobName": "Shapeshifter",
     "mobLabel": "",
     "mobModelTexture": "shapeshifter.png",
     "mobModelGlowTexture": "",
@@ -19,11 +19,11 @@
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -1,
+      "value": -6710887,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -1,
+      "value": -3355444,
       "falpha": 0.0
     },
     "creativeTab": {
@@ -52,14 +52,14 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 0,
+    "attackStrength": 6,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
-    "movementSpeed": 0.0,
-    "armorBaseValue": 100.0,
+    "movementSpeed": 0.35,
+    "armorBaseValue": 6.0,
     "trackingRange": 64,
     "followRange": 16,
-    "health": 1000,
+    "health": 70,
     "xpAmount": 0,
     "waterMob": false,
     "flyingMob": false,
@@ -92,27 +92,24 @@
       "value": ""
     },
     "hurtSound": {
-      "value": ""
+      "value": "entity.generic.hurt"
     },
     "deathSound": {
-      "value": ""
+      "value": "entity.generic.death"
     },
     "stepSound": {
       "value": ""
     },
-    "onPlayerCollidesWith": {
-      "name": "Emerge"
-    },
     "onInitialSpawn": {
-      "name": "InvisUntilTouched"
+      "name": "DespawnSomewhatRandom"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">0</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">0</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">TRUE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">128</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"attack_with_range\"><field name=\"range\">2</field><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">0.5</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">128</field><field name=\"condition\">null,null</field><next><block type=\"doors_open\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "model": "shapeshifter.geo.json",
-    "groupName": "neck",
+    "groupName": "",
     "animation1": "animation.shapeshifter.idle",
-    "animation2": "",
+    "animation2": "animation.shapeshifter.lurkmove",
     "animation3": "",
     "animation4": "",
     "animation5": "",
@@ -120,8 +117,8 @@
     "animation7": "",
     "animation8": "",
     "animation9": "",
-    "animation10": "",
-    "enable2": false,
+    "animation10": "animation.shapeshifter.flee",
+    "enable2": true,
     "enable3": false,
     "enable4": false,
     "enable5": false,
@@ -129,11 +126,11 @@
     "enable7": false,
     "enable8": false,
     "enable9": false,
-    "enable10": false,
+    "enable10": true,
     "breedable": false,
     "tameable": false,
     "disableDeathRotation": false,
-    "headMovement": true,
+    "headMovement": false,
     "eyeHeight": false,
     "breedTriggerItems": [],
     "ranged": false,
@@ -144,12 +141,12 @@
     "rangedAttackInterval": 20,
     "rangedAttackRadius": 10.0,
     "height": 1.0,
-    "spawnThisMob": true,
+    "spawnThisMob": false,
     "doesDespawnWhenIdle": true,
     "spawningProbability": 20,
     "mobSpawningType": "monster",
-    "minNumberOfMobsPerGroup": 4,
-    "maxNumberOfMobsPerGroup": 4,
+    "minNumberOfMobsPerGroup": 1,
+    "maxNumberOfMobsPerGroup": 1,
     "restrictionBiomes": [],
     "spawnInDungeons": false
   }

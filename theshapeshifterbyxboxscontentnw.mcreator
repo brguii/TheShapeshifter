@@ -177,6 +177,74 @@
           }
         ]
       }
+    },
+    {
+      "name": "ShapeshifterWolf",
+      "type": "animatedentity",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shapeshifter_wolf",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/model/ShapeshifterWolfModel.java",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/ShapeshifterWolfEntity.java",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/client/renderer/ShapeshifterWolfRenderer.java",
+          "src/main/resources/data/theshapeshifterbyxboxscontentnw/forge/biome_modifier/shapeshifter_wolf_biome_modifier.json",
+          "src/main/resources/assets/theshapeshifterbyxboxscontentnw/models/item/shapeshifter_wolf_spawn_egg.json"
+        ]
+      }
+    },
+    {
+      "name": "ShapeshifterFlee",
+      "type": "animatedentity",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shapeshifter_flee",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/ShapeshifterFleeEntity.java",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/client/renderer/ShapeshifterFleeRenderer.java",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/model/ShapeshifterFleeModel.java",
+          "src/main/resources/assets/theshapeshifterbyxboxscontentnw/models/item/shapeshifter_flee_spawn_egg.json"
+        ]
+      }
+    },
+    {
+      "name": "DespawnSomewhatRandom",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "despawn_somewhat_random",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/procedures/DespawnSomewhatRandomProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -184,11 +252,15 @@
   "language_map": {
     "en_us": {
       "entity.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall": "Shapeshifter On Wall",
+      "item.theshapeshifterbyxboxscontentnw.shapeshifter_wolf_spawn_egg": "Shapeshifter Wolf Spawn Egg",
       "entity.theshapeshifterbyxboxscontentnw.shapeshifter_killer": "Shapeshifter",
+      "entity.theshapeshifterbyxboxscontentnw.shapeshifter_wolf": "Shapeshifter Wolf",
       "item.theshapeshifterbyxboxscontentnw.shapeshifter_killer_spawn_egg": "Shapeshifter Spawn Egg",
       "item.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall_spawn_egg": "Shapeshifter On Wall Spawn Egg",
+      "item.theshapeshifterbyxboxscontentnw.shapeshifter_flee_spawn_egg": "Shapeshifter Spawn Egg",
       "entity.theshapeshifterbyxboxscontentnw.shapeshifter_fake": "Shapeshifter On Wall Fake PX",
-      "item.theshapeshifterbyxboxscontentnw.shapeshifter_fake_spawn_egg": "Shapeshifter On Wall Fake PX Spawn Egg"
+      "item.theshapeshifterbyxboxscontentnw.shapeshifter_fake_spawn_egg": "Shapeshifter On Wall Fake PX Spawn Egg",
+      "entity.theshapeshifterbyxboxscontentnw.shapeshifter_flee": "Shapeshifter"
     }
   },
   "foldersRoot": {
