@@ -67,7 +67,7 @@
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "deathTime": 20,
-    "lerp": 1,
+    "lerp": 4,
     "disableCollisions": false,
     "ridable": false,
     "canControlForward": false,

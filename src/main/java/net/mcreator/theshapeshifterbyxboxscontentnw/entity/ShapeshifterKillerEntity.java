@@ -185,7 +185,7 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 				return PlayState.CONTINUE;
 			}
 			if (this.isAggressive() && event.isMoving()) {
-				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.flee", EDefaultLoopTypes.LOOP));
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.chase", EDefaultLoopTypes.LOOP));
 				return PlayState.CONTINUE;
 			}
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.idle", EDefaultLoopTypes.LOOP));
@@ -224,8 +224,8 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 
 	@Override
 	public void registerControllers(AnimationData data) {
-		data.addAnimationController(new AnimationController<>(this, "movement", 1, this::movementPredicate));
-		data.addAnimationController(new AnimationController<>(this, "procedure", 1, this::procedurePredicate));
+		data.addAnimationController(new AnimationController<>(this, "movement", 4, this::movementPredicate));
+		data.addAnimationController(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
 	}
 
 	@Override

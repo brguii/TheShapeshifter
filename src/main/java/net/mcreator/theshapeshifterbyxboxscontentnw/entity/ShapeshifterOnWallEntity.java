@@ -216,8 +216,8 @@ public class ShapeshifterOnWallEntity extends Monster implements IAnimatable {
 
 	@Override
 	public void registerControllers(AnimationData data) {
-		data.addAnimationController(new AnimationController<>(this, "movement", 1, this::movementPredicate));
-		data.addAnimationController(new AnimationController<>(this, "procedure", 1, this::procedurePredicate));
+		data.addAnimationController(new AnimationController<>(this, "movement", 4, this::movementPredicate));
+		data.addAnimationController(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
 	}
 
 	@Override
