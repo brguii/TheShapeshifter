@@ -2,7 +2,6 @@
 	"format_version": "1.8.0",
 	"animations": {
 		"animation.shapeshifter.idle": {
-			"loop": true,
 			"animation_length": 2,
 			"bones": {
 				"lowerbody": {
@@ -55,15 +54,14 @@
 						"vector": [17.5, 0, 0]
 					}
 				},
-				"neck": {
+				"head": {
 					"rotation": {
-						"vector": ["query.rotation_to_camera(0)", "query.rotation_to_camera(1) - query.body_y_rotation", 0]
+						"vector": [-15, 0, 0]
 					}
 				}
 			}
 		},
 		"animation.shapeshifter.chase": {
-			"loop": true,
 			"animation_length": 0.5,
 			"bones": {
 				"lowerbody": {
@@ -124,7 +122,6 @@
 			}
 		},
 		"animation.shapeshifter.flee": {
-			"loop": true,
 			"animation_length": 0.5,
 			"bones": {
 				"lowerbody": {
@@ -185,7 +182,6 @@
 			}
 		},
 		"animation.shapeshifter.wall_nvm": {
-			"loop": "hold_on_last_frame",
 			"animation_length": 7,
 			"bones": {
 				"lowerbody": {
@@ -506,7 +502,6 @@
 			}
 		},
 		"animation.shapeshifter.lurkmove": {
-			"loop": true,
 			"animation_length": 2,
 			"bones": {
 				"lowerbody": {
