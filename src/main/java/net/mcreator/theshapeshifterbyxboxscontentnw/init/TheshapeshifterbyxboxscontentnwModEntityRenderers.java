@@ -10,6 +10,7 @@ import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.mcreator.theshapeshifterbyxboxscontentnw.client.renderer.ShapeshifterWolfRenderer;
+import net.mcreator.theshapeshifterbyxboxscontentnw.client.renderer.ShapeshifterWatchRenderer;
 import net.mcreator.theshapeshifterbyxboxscontentnw.client.renderer.ShapeshifterOnWallRenderer;
 import net.mcreator.theshapeshifterbyxboxscontentnw.client.renderer.ShapeshifterKillerRenderer;
 import net.mcreator.theshapeshifterbyxboxscontentnw.client.renderer.ShapeshifterFleeRenderer;
@@ -24,5 +25,6 @@ public class TheshapeshifterbyxboxscontentnwModEntityRenderers {
 		event.registerEntityRenderer(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_FAKE.get(), ShapeshifterFakeRenderer::new);
 		event.registerEntityRenderer(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_WOLF.get(), ShapeshifterWolfRenderer::new);
 		event.registerEntityRenderer(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_FLEE.get(), ShapeshifterFleeRenderer::new);
+		event.registerEntityRenderer(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_WATCH.get(), ShapeshifterWatchRenderer::new);
 	}
 }

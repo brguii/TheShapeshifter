@@ -173,7 +173,7 @@ public class ShapeshifterFakeEntity extends Monster implements IAnimatable {
 
 	private <E extends IAnimatable> PlayState movementPredicate(AnimationEvent<E> event) {
 		if (this.animationprocedure.equals("empty")) {
-			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.idle", EDefaultLoopTypes.LOOP));
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.invis", EDefaultLoopTypes.LOOP));
 			return PlayState.CONTINUE;
 		}
 		return PlayState.STOP;

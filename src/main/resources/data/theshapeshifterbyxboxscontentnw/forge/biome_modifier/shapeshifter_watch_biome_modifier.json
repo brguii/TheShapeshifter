@@ -4,7 +4,7 @@
     "type": "forge:any"
   },
   "spawners": {
-    "type": "theshapeshifterbyxboxscontentnw:shapeshifter_on_wall",
+    "type": "theshapeshifterbyxboxscontentnw:shapeshifter_watch",
     "weight": 20,
     "minCount": 1,
     "maxCount": 1

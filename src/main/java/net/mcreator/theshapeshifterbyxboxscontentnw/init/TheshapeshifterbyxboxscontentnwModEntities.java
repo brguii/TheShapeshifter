@@ -17,6 +17,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterWolfEntity;
+import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterWatchEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterOnWallEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterKillerEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFleeEntity;
@@ -46,6 +47,10 @@ public class TheshapeshifterbyxboxscontentnwModEntities {
 			EntityType.Builder.<ShapeshifterFleeEntity>of(ShapeshifterFleeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterFleeEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<ShapeshifterWatchEntity>> SHAPESHIFTER_WATCH = register("shapeshifter_watch",
+			EntityType.Builder.<ShapeshifterWatchEntity>of(ShapeshifterWatchEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterWatchEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -59,6 +64,7 @@ public class TheshapeshifterbyxboxscontentnwModEntities {
 			ShapeshifterFakeEntity.init();
 			ShapeshifterWolfEntity.init();
 			ShapeshifterFleeEntity.init();
+			ShapeshifterWatchEntity.init();
 		});
 	}
 
@@ -69,5 +75,6 @@ public class TheshapeshifterbyxboxscontentnwModEntities {
 		event.put(SHAPESHIFTER_FAKE.get(), ShapeshifterFakeEntity.createAttributes().build());
 		event.put(SHAPESHIFTER_WOLF.get(), ShapeshifterWolfEntity.createAttributes().build());
 		event.put(SHAPESHIFTER_FLEE.get(), ShapeshifterFleeEntity.createAttributes().build());
+		event.put(SHAPESHIFTER_WATCH.get(), ShapeshifterWatchEntity.createAttributes().build());
 	}
 }

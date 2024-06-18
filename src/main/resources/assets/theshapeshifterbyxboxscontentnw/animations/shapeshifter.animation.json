@@ -234,7 +234,7 @@
 							"vector": [19, 0, 0]
 						},
 						"6.2917": {
-							"vector": [24, 0, 0]
+							"vector": [25, 0, 0]
 						}
 					}
 				},
@@ -924,6 +924,62 @@
 						"4.75": {
 							"vector": [17.5, 0, 0]
 						}
+					}
+				}
+			}
+		},
+		"animation.shapeshifter.invis": {
+			"animation_length": 4.75,
+			"bones": {
+				"lowerbody": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					},
+					"position": {
+						"vector": [25, 0, 0]
+					},
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"rightleg": {
+					"scale": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"lowerrightleg": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"rightarm": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"lowerrightarm": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"neck": {
+					"rotation": {
+						"vector": [0, 0, 95]
+					}
+				},
+				"leftarm": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"lowerleftarm": {
+					"rotation": {
+						"vector": [0, 0, 30]
+					}
+				},
+				"leftleg": {
+					"scale": {
+						"vector": [1, 0.7, 1]
 					}
 				}
 			}
