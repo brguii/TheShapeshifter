@@ -22,7 +22,7 @@ public class ShapeshifterFakeRenderer extends GeoEntityRenderer<ShapeshifterFake
 
 	@Override
 	public RenderType getRenderType(ShapeshifterFakeEntity entity, float partialTicks, PoseStack stack, MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn, ResourceLocation textureLocation) {
-		stack.scale(0.45f, 0.45f, 0.45f);
+		stack.scale(0.55f, 0.55f, 0.55f);
 		return RenderType.entityTranslucent(getTextureLocation(entity));
 	}
 }

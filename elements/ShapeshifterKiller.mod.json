@@ -5,9 +5,9 @@
     "mobName": "Shapeshifter",
     "mobLabel": "",
     "mobModelTexture": "shapeshifter.png",
-    "mobModelGlowTexture": "",
+    "mobModelGlowTexture": "shapeshifter.eyes.png",
     "visualScale": {
-      "fixedValue": 0.45
+      "fixedValue": 0.55
     },
     "boundingBoxScale": {
       "fixedValue": 1.0

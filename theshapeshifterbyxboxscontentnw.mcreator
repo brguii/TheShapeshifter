@@ -12,6 +12,7 @@
           "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/ShapeshifterKillerEntity.java",
           "src/main/resources/assets/theshapeshifterbyxboxscontentnw/models/item/shapeshifter_killer_spawn_egg.json",
           "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/client/renderer/ShapeshifterKillerRenderer.java",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/layer/ShapeshifterKillerLayer.java",
           "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/model/ShapeshifterKillerModel.java"
         ]
       }
@@ -28,6 +29,7 @@
           "src/main/resources/assets/theshapeshifterbyxboxscontentnw/models/item/shapeshifter_on_wall_spawn_egg.json",
           "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/model/ShapeshifterOnWallModel.java",
           "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/ShapeshifterOnWallEntity.java",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/layer/ShapeshifterOnWallLayer.java",
           "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/client/renderer/ShapeshifterOnWallRenderer.java",
           "src/main/resources/data/theshapeshifterbyxboxscontentnw/forge/biome_modifier/shapeshifter_on_wall_biome_modifier.json"
         ]
@@ -205,6 +207,7 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/ShapeshifterFleeEntity.java",
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/layer/ShapeshifterFleeLayer.java",
           "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/client/renderer/ShapeshifterFleeRenderer.java",
           "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/model/ShapeshifterFleeModel.java",
           "src/main/resources/assets/theshapeshifterbyxboxscontentnw/models/item/shapeshifter_flee_spawn_egg.json"

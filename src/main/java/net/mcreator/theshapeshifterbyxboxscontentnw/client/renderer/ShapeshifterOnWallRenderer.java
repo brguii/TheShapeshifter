@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
 
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.model.ShapeshifterOnWallModel;
+import net.mcreator.theshapeshifterbyxboxscontentnw.entity.layer.ShapeshifterOnWallLayer;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterOnWallEntity;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -18,11 +19,12 @@ public class ShapeshifterOnWallRenderer extends GeoEntityRenderer<ShapeshifterOn
 	public ShapeshifterOnWallRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new ShapeshifterOnWallModel());
 		this.shadowRadius = 0f;
+		this.addLayer(new ShapeshifterOnWallLayer(this));
 	}
 
 	@Override
 	public RenderType getRenderType(ShapeshifterOnWallEntity entity, float partialTicks, PoseStack stack, MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn, ResourceLocation textureLocation) {
-		stack.scale(0.45f, 0.45f, 0.45f);
+		stack.scale(0.55f, 0.55f, 0.55f);
 		return RenderType.entityTranslucent(getTextureLocation(entity));
 	}
 }
