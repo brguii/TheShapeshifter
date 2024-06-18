@@ -34,7 +34,7 @@ public class FleeProcedure {
 					world.addFreshEntity(entityToSpawn);
 				}
 			}
-			if (Mth.nextInt(RandomSource.create(), 1, 10) >= 9) {
+			if (Mth.nextInt(RandomSource.create(), 1, 10) <= 9) {
 				if (!entity.level.isClientSide())
 					entity.discard();
 				if (world instanceof ServerLevel _level) {
