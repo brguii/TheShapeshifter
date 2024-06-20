@@ -54,11 +54,11 @@
     "mobCreatureType": "UNDEFINED",
     "attackStrength": 6,
     "attackKnockback": 0.0,
-    "knockbackResistance": 0.0,
+    "knockbackResistance": 2.6,
     "movementSpeed": 0.35,
     "armorBaseValue": 6.0,
     "trackingRange": 64,
-    "followRange": 16,
+    "followRange": 128,
     "health": 90,
     "xpAmount": 0,
     "waterMob": false,
@@ -74,7 +74,7 @@
     "canControlStrafe": false,
     "immuneToFire": false,
     "immuneToArrows": false,
-    "immuneToFallDamage": false,
+    "immuneToFallDamage": true,
     "immuneToCactus": false,
     "immuneToDrowning": false,
     "immuneToLightning": false,
@@ -95,7 +95,7 @@
       "value": "entity.generic.hurt"
     },
     "deathSound": {
-      "value": "entity.generic.death"
+      "value": "entity.player.death"
     },
     "stepSound": {
       "value": ""

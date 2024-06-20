@@ -173,6 +173,7 @@ public class ShapeshifterOnWallEntity extends Monster implements IAnimatable {
 		builder = builder.add(Attributes.ARMOR, 100);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 1000);
 		return builder;
 	}
 

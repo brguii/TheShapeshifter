@@ -131,7 +131,14 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.death"));
+	}
+
+	@Override
+	public boolean hurt(DamageSource source, float amount) {
+		if (source == DamageSource.FALL)
+			return false;
+		return super.hurt(source, amount);
 	}
 
 	@Override
@@ -174,7 +181,8 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 		builder = builder.add(Attributes.MAX_HEALTH, 90);
 		builder = builder.add(Attributes.ARMOR, 6);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 6);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 128);
+		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 2.6);
 		return builder;
 	}
 

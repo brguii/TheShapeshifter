@@ -26,7 +26,7 @@ public class FleeProcedure {
 		if (entity == null)
 			return;
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 10, 10, 10), e -> true).isEmpty()) {
-			if (Mth.nextInt(RandomSource.create(), 1, 10) >= 9) {
+			if (Mth.nextInt(RandomSource.create(), 1, 10) <= 9) {
 				if (!entity.level.isClientSide())
 					entity.discard();
 				if (world instanceof ServerLevel _level) {
@@ -40,7 +40,7 @@ public class FleeProcedure {
 					world.addFreshEntity(entityToSpawn);
 				}
 			}
-			if (Mth.nextInt(RandomSource.create(), 1, 10) <= 9) {
+			if (Mth.nextInt(RandomSource.create(), 1, 10) < 9) {
 				if (!entity.level.isClientSide())
 					entity.discard();
 				if (world instanceof ServerLevel _level) {
