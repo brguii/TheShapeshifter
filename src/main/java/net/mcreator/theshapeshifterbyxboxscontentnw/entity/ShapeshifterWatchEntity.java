@@ -19,6 +19,7 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
@@ -30,7 +31,6 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.Pose;
-import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
@@ -49,7 +49,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.FleeProcedure;
 import net.mcreator.theshapeshifterbyxboxscontentnw.init.TheshapeshifterbyxboxscontentnwModEntities;
 
-public class ShapeshifterWatchEntity extends PathfinderMob implements IAnimatable {
+public class ShapeshifterWatchEntity extends Monster implements IAnimatable {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(ShapeshifterWatchEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(ShapeshifterWatchEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(ShapeshifterWatchEntity.class, EntityDataSerializers.STRING);
@@ -106,11 +106,12 @@ public class ShapeshifterWatchEntity extends PathfinderMob implements IAnimatabl
 			}
 		});
 		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 0.5));
-		this.targetSelector.addGoal(4, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(6, new FloatGoal(this));
-		this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, (float) 128));
-		this.goalSelector.addGoal(8, new OpenDoorGoal(this, true));
+		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.targetSelector.addGoal(5, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(7, new FloatGoal(this));
+		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, (float) 128));
+		this.goalSelector.addGoal(9, new OpenDoorGoal(this, true));
 	}
 
 	@Override
@@ -151,12 +152,6 @@ public class ShapeshifterWatchEntity extends PathfinderMob implements IAnimatabl
 	@Override
 	public EntityDimensions getDimensions(Pose p_33597_) {
 		return super.getDimensions(p_33597_).scale((float) 1);
-	}
-
-	@Override
-	public void aiStep() {
-		super.aiStep();
-		this.updateSwingTime();
 	}
 
 	public static void init() {

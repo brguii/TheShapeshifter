@@ -28,7 +28,7 @@ import net.mcreator.theshapeshifterbyxboxscontentnw.Theshapeshifterbyxboxsconten
 public class TheshapeshifterbyxboxscontentnwModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, TheshapeshifterbyxboxscontentnwMod.MODID);
 	public static final RegistryObject<EntityType<ShapeshifterOnWallEntity>> SHAPESHIFTER_ON_WALL = register("shapeshifter_on_wall",
-			EntityType.Builder.<ShapeshifterOnWallEntity>of(ShapeshifterOnWallEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterOnWallEntity::new)
+			EntityType.Builder.<ShapeshifterOnWallEntity>of(ShapeshifterOnWallEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterOnWallEntity::new)
 
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<ShapeshifterKillerEntity>> SHAPESHIFTER_KILLER = register("shapeshifter_killer",
@@ -36,7 +36,7 @@ public class TheshapeshifterbyxboxscontentnwModEntities {
 
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<ShapeshifterFakeEntity>> SHAPESHIFTER_FAKE = register("shapeshifter_fake",
-			EntityType.Builder.<ShapeshifterFakeEntity>of(ShapeshifterFakeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterFakeEntity::new)
+			EntityType.Builder.<ShapeshifterFakeEntity>of(ShapeshifterFakeEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterFakeEntity::new)
 
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<ShapeshifterWolfEntity>> SHAPESHIFTER_WOLF = register("shapeshifter_wolf",

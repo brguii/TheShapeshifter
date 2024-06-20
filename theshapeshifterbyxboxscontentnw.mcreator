@@ -87,6 +87,18 @@
             "type": "entity"
           },
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -378,6 +390,41 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/procedures/FleeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DespawnRandomAggro",
+      "type": "procedure",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "despawn_random_aggro",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/procedures/DespawnRandomAggroProcedure.java"
         ],
         "dependencies": [
           {

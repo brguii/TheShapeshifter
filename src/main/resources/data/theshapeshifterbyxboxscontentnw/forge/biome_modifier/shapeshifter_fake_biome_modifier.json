@@ -5,7 +5,7 @@
   },
   "spawners": {
     "type": "theshapeshifterbyxboxscontentnw:shapeshifter_fake",
-    "weight": 20,
+    "weight": 10,
     "minCount": 1,
     "maxCount": 1
   }
