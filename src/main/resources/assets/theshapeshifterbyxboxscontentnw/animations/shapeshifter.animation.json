@@ -983,6 +983,47 @@
 					}
 				}
 			}
+		},
+		"animation.shapeshifter.holyshit!!!1": {
+			"animation_length": 2,
+			"bones": {
+				"rightarm": {
+					"rotation": {
+						"vector": [0, 0, 117.5]
+					},
+					"position": {
+						"vector": [0, -2, 0]
+					}
+				},
+				"lowerrightarm": {
+					"rotation": {
+						"vector": [0, 0, 120]
+					}
+				},
+				"leftarm": {
+					"rotation": {
+						"vector": [0, 0, -117.5]
+					},
+					"position": {
+						"vector": [0, -2, 0]
+					}
+				},
+				"lowerleftarm": {
+					"rotation": {
+						"vector": [0, 0, -120]
+					}
+				},
+				"leftleg": {
+					"rotation": {
+						"vector": [0, 0, -2.5]
+					}
+				},
+				"lowerleftleg2": {
+					"rotation": {
+						"vector": [0, 0, 2.5]
+					}
+				}
+			}
 		}
 	},
 	"geckolib_format_version": 2
