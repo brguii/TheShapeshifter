@@ -26,7 +26,7 @@ public class FleeProcedure {
 		if (entity == null)
 			return;
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 10, 10, 10), e -> true).isEmpty()) {
-			if (Mth.nextInt(RandomSource.create(), 1, 10) <= 9) {
+			if (Mth.nextInt(RandomSource.create(), 1, 10) != 10) {
 				if (!entity.level.isClientSide())
 					entity.discard();
 				if (world instanceof ServerLevel _level) {
@@ -40,7 +40,7 @@ public class FleeProcedure {
 					world.addFreshEntity(entityToSpawn);
 				}
 			}
-			if (Mth.nextInt(RandomSource.create(), 1, 10) < 9) {
+			if (Mth.nextInt(RandomSource.create(), 1, 10) == 10) {
 				if (!entity.level.isClientSide())
 					entity.discard();
 				if (world instanceof ServerLevel _level) {
@@ -55,9 +55,9 @@ public class FleeProcedure {
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theshapeshifterbyxboxscontentnw:sound2")), SoundSource.NEUTRAL, 1, 1);
+						_level.playSound(null, new BlockPos(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theshapeshifterbyxboxscontentnw:sound2")), SoundSource.NEUTRAL, 2, 1);
 					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theshapeshifterbyxboxscontentnw:sound2")), SoundSource.NEUTRAL, 1, 1, false);
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("theshapeshifterbyxboxscontentnw:sound2")), SoundSource.NEUTRAL, 2, 1, false);
 					}
 				}
 			}
