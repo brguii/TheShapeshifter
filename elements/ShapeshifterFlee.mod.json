@@ -100,9 +100,6 @@
     "stepSound": {
       "value": ""
     },
-    "whenMobIsHurt": {
-      "name": "TurnKiller"
-    },
     "onMobTickUpdate": {
       "name": "DespawnSomewhatRandom"
     },

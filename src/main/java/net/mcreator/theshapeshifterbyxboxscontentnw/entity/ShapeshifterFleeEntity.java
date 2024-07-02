@@ -43,7 +43,6 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
-import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.TurnKillerProcedure;
 import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.DespawnSomewhatRandomProcedure;
 import net.mcreator.theshapeshifterbyxboxscontentnw.init.TheshapeshifterbyxboxscontentnwModEntities;
 
@@ -125,12 +124,6 @@ public class ShapeshifterFleeEntity extends Monster implements IAnimatable {
 	@Override
 	public SoundEvent getDeathSound() {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
-	}
-
-	@Override
-	public boolean hurt(DamageSource source, float amount) {
-		TurnKillerProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
-		return super.hurt(source, amount);
 	}
 
 	@Override
