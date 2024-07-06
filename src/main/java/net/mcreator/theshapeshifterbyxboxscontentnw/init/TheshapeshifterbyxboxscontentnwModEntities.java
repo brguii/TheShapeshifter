@@ -20,7 +20,7 @@ import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterWolfEntit
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterWatchEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterOnWallEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterKillerEntity;
-import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFleeEntity;
+import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFleeingEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFakeEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.TheshapeshifterbyxboxscontentnwMod;
 
@@ -43,12 +43,12 @@ public class TheshapeshifterbyxboxscontentnwModEntities {
 			EntityType.Builder.<ShapeshifterWolfEntity>of(ShapeshifterWolfEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterWolfEntity::new)
 
 					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<ShapeshifterFleeEntity>> SHAPESHIFTER_FLEE = register("shapeshifter_flee",
-			EntityType.Builder.<ShapeshifterFleeEntity>of(ShapeshifterFleeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterFleeEntity::new)
-
-					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<ShapeshifterWatchEntity>> SHAPESHIFTER_WATCH = register("shapeshifter_watch",
 			EntityType.Builder.<ShapeshifterWatchEntity>of(ShapeshifterWatchEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterWatchEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<ShapeshifterFleeingEntity>> SHAPESHIFTER_FLEEING = register("shapeshifter_fleeing",
+			EntityType.Builder.<ShapeshifterFleeingEntity>of(ShapeshifterFleeingEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterFleeingEntity::new)
 
 					.sized(0.6f, 1.8f));
 
@@ -63,8 +63,8 @@ public class TheshapeshifterbyxboxscontentnwModEntities {
 			ShapeshifterKillerEntity.init();
 			ShapeshifterFakeEntity.init();
 			ShapeshifterWolfEntity.init();
-			ShapeshifterFleeEntity.init();
 			ShapeshifterWatchEntity.init();
+			ShapeshifterFleeingEntity.init();
 		});
 	}
 
@@ -74,7 +74,7 @@ public class TheshapeshifterbyxboxscontentnwModEntities {
 		event.put(SHAPESHIFTER_KILLER.get(), ShapeshifterKillerEntity.createAttributes().build());
 		event.put(SHAPESHIFTER_FAKE.get(), ShapeshifterFakeEntity.createAttributes().build());
 		event.put(SHAPESHIFTER_WOLF.get(), ShapeshifterWolfEntity.createAttributes().build());
-		event.put(SHAPESHIFTER_FLEE.get(), ShapeshifterFleeEntity.createAttributes().build());
 		event.put(SHAPESHIFTER_WATCH.get(), ShapeshifterWatchEntity.createAttributes().build());
+		event.put(SHAPESHIFTER_FLEEING.get(), ShapeshifterFleeingEntity.createAttributes().build());
 	}
 }

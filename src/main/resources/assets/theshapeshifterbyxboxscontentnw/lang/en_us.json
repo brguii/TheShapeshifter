@@ -1,5 +1,4 @@
 {
-  "item.theshapeshifterbyxboxscontentnw.shapeshifter_flee_spawn_egg": "Shapeshifter Flee Spawn Egg",
   "entity.theshapeshifterbyxboxscontentnw.shapeshifter_fake": "Shapeshifter On Wall Fake",
   "entity.theshapeshifterbyxboxscontentnw.shapeshifter_watch": "Shapeshifter Watch",
   "subtitles.sound": "",
@@ -10,8 +9,9 @@
   "subtitles.knocking": "Knocking",
   "item.theshapeshifterbyxboxscontentnw.shapeshifter_killer_spawn_egg": "Shapeshifter Spawn Egg",
   "subtitles.sound2": "",
+  "item.theshapeshifterbyxboxscontentnw.shapeshifter_fleeing_spawn_egg": "Shapeshifter Fleeing Spawn Egg",
   "item.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall_spawn_egg": "Shapeshifter On Wall Spawn Egg",
+  "entity.theshapeshifterbyxboxscontentnw.shapeshifter_fleeing": "Shapeshifter Fleeing",
   "item.theshapeshifterbyxboxscontentnw.shapeshifter_watch_spawn_egg": "Shapeshifter Watch Spawn Egg",
-  "item.theshapeshifterbyxboxscontentnw.shapeshifter_fake_spawn_egg": "Shapeshifter On Wall Fake Spawn Egg",
-  "entity.theshapeshifterbyxboxscontentnw.shapeshifter_flee": "Shapeshifter Flee"
+  "item.theshapeshifterbyxboxscontentnw.shapeshifter_fake_spawn_egg": "Shapeshifter On Wall Fake Spawn Egg"
 }

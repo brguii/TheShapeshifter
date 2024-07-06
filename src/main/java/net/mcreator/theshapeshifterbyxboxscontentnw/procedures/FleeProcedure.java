@@ -19,7 +19,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.theshapeshifterbyxboxscontentnw.init.TheshapeshifterbyxboxscontentnwModEntities;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterKillerEntity;
-import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFleeEntity;
+import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFleeingEntity;
 
 public class FleeProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -30,7 +30,7 @@ public class FleeProcedure {
 				if (!entity.level.isClientSide())
 					entity.discard();
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = new ShapeshifterFleeEntity(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_FLEE.get(), _level);
+					Entity entityToSpawn = new ShapeshifterFleeingEntity(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_FLEEING.get(), _level);
 					entityToSpawn.moveTo(x, y, z, 0, 0);
 					entityToSpawn.setYBodyRot(0);
 					entityToSpawn.setYHeadRot(0);

@@ -8,7 +8,7 @@ import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterWolfEntit
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterWatchEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterOnWallEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterKillerEntity;
-import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFleeEntity;
+import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFleeingEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFakeEntity;
 
 @Mod.EventBusSubscriber
@@ -44,14 +44,14 @@ public class EntityAnimationFactory {
 					syncable.animationprocedure = animation;
 				}
 			}
-			if (event.getEntity() instanceof ShapeshifterFleeEntity syncable) {
+			if (event.getEntity() instanceof ShapeshifterWatchEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");
 					syncable.animationprocedure = animation;
 				}
 			}
-			if (event.getEntity() instanceof ShapeshifterWatchEntity syncable) {
+			if (event.getEntity() instanceof ShapeshifterFleeingEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");
