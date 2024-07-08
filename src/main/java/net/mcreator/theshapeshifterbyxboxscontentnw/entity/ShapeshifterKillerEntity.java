@@ -38,6 +38,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
@@ -48,7 +49,9 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
+import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.FiftyFiftyDespawnProcedure;
 import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.DespawnOtherKillersProcedure;
+import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.CrouchProcedure;
 import net.mcreator.theshapeshifterbyxboxscontentnw.init.TheshapeshifterbyxboxscontentnwModEntities;
 
 import javax.annotation.Nullable;
@@ -162,8 +165,15 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 	}
 
 	@Override
+	public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
+		super.awardKillScore(entity, score, damageSource);
+		FiftyFiftyDespawnProcedure.execute(entity);
+	}
+
+	@Override
 	public void baseTick() {
 		super.baseTick();
+		CrouchProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 
@@ -192,6 +202,14 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 
 					&& !this.isAggressive()) {
 				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.lurkmove", EDefaultLoopTypes.LOOP));
+				return PlayState.CONTINUE;
+			}
+			if (this.isShiftKeyDown()) {
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.crouchidle", EDefaultLoopTypes.LOOP));
+				return PlayState.CONTINUE;
+			}
+			if (this.isSprinting()) {
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.crouchmove", EDefaultLoopTypes.LOOP));
 				return PlayState.CONTINUE;
 			}
 			if (this.isAggressive() && event.isMoving()) {

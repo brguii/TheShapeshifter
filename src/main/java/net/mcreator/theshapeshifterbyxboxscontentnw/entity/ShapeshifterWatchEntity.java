@@ -177,6 +177,14 @@ public class ShapeshifterWatchEntity extends Monster implements IAnimatable {
 				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.flee", EDefaultLoopTypes.LOOP));
 				return PlayState.CONTINUE;
 			}
+			if (this.isShiftKeyDown()) {
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.crouchidle", EDefaultLoopTypes.LOOP));
+				return PlayState.CONTINUE;
+			}
+			if (this.isSprinting()) {
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.crouchmove", EDefaultLoopTypes.LOOP));
+				return PlayState.CONTINUE;
+			}
 			if (this.isAggressive() && event.isMoving()) {
 				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.flee", EDefaultLoopTypes.LOOP));
 				return PlayState.CONTINUE;

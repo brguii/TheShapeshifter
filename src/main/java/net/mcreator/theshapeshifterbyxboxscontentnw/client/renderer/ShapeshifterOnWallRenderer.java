@@ -24,7 +24,7 @@ public class ShapeshifterOnWallRenderer extends GeoEntityRenderer<ShapeshifterOn
 
 	@Override
 	public RenderType getRenderType(ShapeshifterOnWallEntity entity, float partialTicks, PoseStack stack, MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn, ResourceLocation textureLocation) {
-		stack.scale(0.55f, 0.55f, 0.55f);
+		stack.scale(0.75f, 0.75f, 0.75f);
 		return RenderType.entityTranslucent(getTextureLocation(entity));
 	}
 }

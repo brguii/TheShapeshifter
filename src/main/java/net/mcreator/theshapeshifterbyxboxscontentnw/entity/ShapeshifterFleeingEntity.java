@@ -45,6 +45,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.TurnKillerProcedure;
+import net.mcreator.theshapeshifterbyxboxscontentnw.procedures.DespawnSomewhatRandomProcedure;
 import net.mcreator.theshapeshifterbyxboxscontentnw.init.TheshapeshifterbyxboxscontentnwModEntities;
 
 public class ShapeshifterFleeingEntity extends Monster implements IAnimatable {
@@ -152,6 +153,7 @@ public class ShapeshifterFleeingEntity extends Monster implements IAnimatable {
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		DespawnSomewhatRandomProcedure.execute(this.level, this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 
@@ -180,6 +182,14 @@ public class ShapeshifterFleeingEntity extends Monster implements IAnimatable {
 
 			) {
 				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.flee", EDefaultLoopTypes.LOOP));
+				return PlayState.CONTINUE;
+			}
+			if (this.isShiftKeyDown()) {
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.crouchidle", EDefaultLoopTypes.LOOP));
+				return PlayState.CONTINUE;
+			}
+			if (this.isSprinting()) {
+				event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.crouchmove", EDefaultLoopTypes.LOOP));
 				return PlayState.CONTINUE;
 			}
 			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.shapeshifter.idle", EDefaultLoopTypes.LOOP));

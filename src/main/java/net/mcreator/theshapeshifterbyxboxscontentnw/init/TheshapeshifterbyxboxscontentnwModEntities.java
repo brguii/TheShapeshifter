@@ -42,7 +42,7 @@ public class TheshapeshifterbyxboxscontentnwModEntities {
 	public static final RegistryObject<EntityType<ShapeshifterWolfEntity>> SHAPESHIFTER_WOLF = register("shapeshifter_wolf",
 			EntityType.Builder.<ShapeshifterWolfEntity>of(ShapeshifterWolfEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterWolfEntity::new)
 
-					.sized(0.6f, 1.8f));
+					.sized(0.6f, 0.8f));
 	public static final RegistryObject<EntityType<ShapeshifterWatchEntity>> SHAPESHIFTER_WATCH = register("shapeshifter_watch",
 			EntityType.Builder.<ShapeshifterWatchEntity>of(ShapeshifterWatchEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterWatchEntity::new)
 
