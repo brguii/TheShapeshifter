@@ -109,7 +109,7 @@ public class ShapeshifterKillerEntity extends Monster implements IAnimatable {
 		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
-				return 4;
+				return 5.29;
 			}
 		});
 		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 0.5));

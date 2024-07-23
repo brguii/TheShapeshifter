@@ -14,7 +14,6 @@ import net.mcreator.theshapeshifterbyxboxscontentnw.client.renderer.Shapeshifter
 import net.mcreator.theshapeshifterbyxboxscontentnw.client.renderer.ShapeshifterOnWallRenderer;
 import net.mcreator.theshapeshifterbyxboxscontentnw.client.renderer.ShapeshifterKillerRenderer;
 import net.mcreator.theshapeshifterbyxboxscontentnw.client.renderer.ShapeshifterFleeingRenderer;
-import net.mcreator.theshapeshifterbyxboxscontentnw.client.renderer.ShapeshifterFakeRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class TheshapeshifterbyxboxscontentnwModEntityRenderers {
@@ -22,7 +21,6 @@ public class TheshapeshifterbyxboxscontentnwModEntityRenderers {
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_ON_WALL.get(), ShapeshifterOnWallRenderer::new);
 		event.registerEntityRenderer(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_KILLER.get(), ShapeshifterKillerRenderer::new);
-		event.registerEntityRenderer(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_FAKE.get(), ShapeshifterFakeRenderer::new);
 		event.registerEntityRenderer(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_WOLF.get(), ShapeshifterWolfRenderer::new);
 		event.registerEntityRenderer(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_WATCH.get(), ShapeshifterWatchRenderer::new);
 		event.registerEntityRenderer(TheshapeshifterbyxboxscontentnwModEntities.SHAPESHIFTER_FLEEING.get(), ShapeshifterFleeingRenderer::new);

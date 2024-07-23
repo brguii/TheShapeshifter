@@ -21,7 +21,6 @@ import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterWatchEnti
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterOnWallEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterKillerEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFleeingEntity;
-import net.mcreator.theshapeshifterbyxboxscontentnw.entity.ShapeshifterFakeEntity;
 import net.mcreator.theshapeshifterbyxboxscontentnw.TheshapeshifterbyxboxscontentnwMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -33,10 +32,6 @@ public class TheshapeshifterbyxboxscontentnwModEntities {
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<ShapeshifterKillerEntity>> SHAPESHIFTER_KILLER = register("shapeshifter_killer",
 			EntityType.Builder.<ShapeshifterKillerEntity>of(ShapeshifterKillerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterKillerEntity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<ShapeshifterFakeEntity>> SHAPESHIFTER_FAKE = register("shapeshifter_fake",
-			EntityType.Builder.<ShapeshifterFakeEntity>of(ShapeshifterFakeEntity::new, MobCategory.AMBIENT).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShapeshifterFakeEntity::new)
 
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<ShapeshifterWolfEntity>> SHAPESHIFTER_WOLF = register("shapeshifter_wolf",
@@ -61,7 +56,6 @@ public class TheshapeshifterbyxboxscontentnwModEntities {
 		event.enqueueWork(() -> {
 			ShapeshifterOnWallEntity.init();
 			ShapeshifterKillerEntity.init();
-			ShapeshifterFakeEntity.init();
 			ShapeshifterWolfEntity.init();
 			ShapeshifterWatchEntity.init();
 			ShapeshifterFleeingEntity.init();
@@ -72,7 +66,6 @@ public class TheshapeshifterbyxboxscontentnwModEntities {
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(SHAPESHIFTER_ON_WALL.get(), ShapeshifterOnWallEntity.createAttributes().build());
 		event.put(SHAPESHIFTER_KILLER.get(), ShapeshifterKillerEntity.createAttributes().build());
-		event.put(SHAPESHIFTER_FAKE.get(), ShapeshifterFakeEntity.createAttributes().build());
 		event.put(SHAPESHIFTER_WOLF.get(), ShapeshifterWolfEntity.createAttributes().build());
 		event.put(SHAPESHIFTER_WATCH.get(), ShapeshifterWatchEntity.createAttributes().build());
 		event.put(SHAPESHIFTER_FLEEING.get(), ShapeshifterFleeingEntity.createAttributes().build());

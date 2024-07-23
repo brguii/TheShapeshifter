@@ -87,18 +87,6 @@
             "type": "entity"
           },
           {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
             "name": "world",
             "type": "world"
           }
@@ -115,58 +103,6 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/procedures/DespawnOtherKillersProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "ShapeshifterFake",
-      "type": "animatedentity",
-      "sortid": 7,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "shapeshifter_fake",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/model/ShapeshifterFakeModel.java",
-          "src/main/resources/assets/theshapeshifterbyxboxscontentnw/models/item/shapeshifter_fake_spawn_egg.json",
-          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/client/renderer/ShapeshifterFakeRenderer.java",
-          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/entity/ShapeshifterFakeEntity.java",
-          "src/main/resources/data/theshapeshifterbyxboxscontentnw/forge/biome_modifier/shapeshifter_fake_biome_modifier.json"
-        ]
-      }
-    },
-    {
-      "name": "Emergish",
-      "type": "procedure",
-      "sortid": 6,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "emergish",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/theshapeshifterbyxboxscontentnw/procedures/EmergishProcedure.java"
         ],
         "dependencies": [
           {
@@ -569,10 +505,9 @@
   ],
   "language_map": {
     "en_us": {
-      "entity.theshapeshifterbyxboxscontentnw.shapeshifter_fake": "Shapeshifter On Wall Fake",
       "entity.theshapeshifterbyxboxscontentnw.shapeshifter_watch": "Shapeshifter Watch",
       "subtitles.sound": "",
-      "entity.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall": "Shapeshifter On Wall",
+      "entity.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall": "Shapeshifter Hidden",
       "item.theshapeshifterbyxboxscontentnw.shapeshifter_wolf_spawn_egg": "Shapeshifter Wolf Spawn Egg",
       "entity.theshapeshifterbyxboxscontentnw.shapeshifter_killer": "Shapeshifter",
       "entity.theshapeshifterbyxboxscontentnw.shapeshifter_wolf": "Shapeshifter Wolf",
@@ -580,10 +515,9 @@
       "item.theshapeshifterbyxboxscontentnw.shapeshifter_killer_spawn_egg": "Shapeshifter Spawn Egg",
       "subtitles.sound2": "",
       "item.theshapeshifterbyxboxscontentnw.shapeshifter_fleeing_spawn_egg": "Shapeshifter Fleeing Spawn Egg",
-      "item.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall_spawn_egg": "Shapeshifter On Wall Spawn Egg",
+      "item.theshapeshifterbyxboxscontentnw.shapeshifter_on_wall_spawn_egg": "Shapeshifter Hidden Spawn Egg",
       "entity.theshapeshifterbyxboxscontentnw.shapeshifter_fleeing": "Shapeshifter Fleeing",
-      "item.theshapeshifterbyxboxscontentnw.shapeshifter_watch_spawn_egg": "Shapeshifter Watch Spawn Egg",
-      "item.theshapeshifterbyxboxscontentnw.shapeshifter_fake_spawn_egg": "Shapeshifter On Wall Fake Spawn Egg"
+      "item.theshapeshifterbyxboxscontentnw.shapeshifter_watch_spawn_egg": "Shapeshifter Watch Spawn Egg"
     }
   },
   "foldersRoot": {

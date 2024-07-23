@@ -2,7 +2,7 @@
   "_fv": 57,
   "_type": "animatedentity",
   "definition": {
-    "mobName": "Shapeshifter On Wall",
+    "mobName": "Shapeshifter Hidden",
     "mobLabel": "",
     "mobModelTexture": "shapeshifter.png",
     "mobModelGlowTexture": "shapeshifter.eyes.png",

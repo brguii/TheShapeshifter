@@ -5,12 +5,11 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.core.BlockPos;
 
 import net.mcreator.theshapeshifterbyxboxscontentnw.TheshapeshifterbyxboxscontentnwMod;
 
 public class InvisUntilTouchedProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		if (entity instanceof LivingEntity _entity && !_entity.level.isClientSide())
@@ -21,9 +20,5 @@ public class InvisUntilTouchedProcedure {
 			if (!entity.level.isClientSide())
 				entity.discard();
 		});
-		if (world.canSeeSkyFromBelowWater(new BlockPos(x, y, z))) {
-			if (!entity.level.isClientSide())
-				entity.discard();
-		}
 	}
 }
